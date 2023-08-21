@@ -1,0 +1,29 @@
+<div class="dialog"> 
+
+    <div class="first-line">
+            <div class="p-start">
+                <p><strong>{{data ? 'Edit' : 'Add'}}  tag</strong></p>
+            </div>
+    
+            <div class="cancel-icon" (click)="cancelForm()">
+                 <mat-icon >close</mat-icon>
+            </div>
+    </div>
+    
+    <div class="main">
+        <mat-icon>create</mat-icon>
+        <input [formControl]="tagControl" type="text" placeholder="enter text">
+    </div>
+    
+    <div class="two-buttons">
+        
+            <button mat-stroked-button (click)="cancelForm()"><mat-icon >close</mat-icon>Close</button>
+        
+        
+             <button mat-stroked-button (click)="submit()" ><mat-icon>done</mat-icon>{{data ? 'Save' : 'Add'}} Me</button>
+       
+    </div>
+    
+    </div>
+
+
