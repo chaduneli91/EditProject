@@ -11,8 +11,14 @@
     </div>
     
     <div class="main">
-        <mat-icon>create</mat-icon>
-        <input [formControl]="tagControl" type="text" placeholder="enter text">
+        
+            <mat-icon>create</mat-icon>
+            <input [formControl]="tagControl" type="text" placeholder="enter text">
+<!--
+            <button  class="btn"  (click)="file.click()"> ფოტოს არჩევა </button>
+            <input #file (change)="selectImage($event)" multiple type="file" style="display: none"/>
+-->
+    
     </div>
     
     <div class="two-buttons">

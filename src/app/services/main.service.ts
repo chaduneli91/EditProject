@@ -7,7 +7,8 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root'
 })
 export class MainService implements OnInit {
-  readonly ROOT_URL = environment.apiUrl;
+
+  readonly ROOT_URL =environment.apiUrl;
   
   constructor( private _http: HttpClient ) { }
   ngOnInit(): void {}
@@ -25,6 +26,18 @@ export class MainService implements OnInit {
   }
  
   editTag(data: {id: string, title: string}){
-    return this._http.put(`${this.ROOT_URL}/add`, data);
+    return this._http.put(`${this.ROOT_URL}/add/${data.id}`, data);
+  }
+
+
+
+  
+  upload(file: File){
+    let formData = new FormData();
+    formData.append('img', file)
+    return this._http.post(`${this.ROOT_URL}/add`, formData) // url მისმაართი არასწორადაა
+  }
+  submitImage(data : any){
+    return this._http.post(`${this.ROOT_URL}/add`, data) // ეს არგუმენტები და მისმაართი არასწორადაა
   }
 }

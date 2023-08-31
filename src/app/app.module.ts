@@ -13,12 +13,18 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
+import { UploadDialogComponent } from './upload-dialog/upload-dialog.component';
+import { AngularFireStorageModule } from "@angular/fire/compat/storage";
+import { AngularFireModule} from "@angular/fire/compat";
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
     BasicComponent,
     DeleteDialogComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    UploadDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.apiUrl)
   ],
   providers: [],
   bootstrap: [AppComponent]

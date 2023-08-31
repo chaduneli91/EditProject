@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { AddDialogComponent } from '../add-dialog/add-dialog.component';
+import { UploadDialogComponent } from '../upload-dialog/upload-dialog.component';
 
 
 @Component({
@@ -58,6 +59,6 @@ export class BasicComponent implements OnInit {
     )
   }
   
-
+ 
   
 }
